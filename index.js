@@ -1,7 +1,13 @@
 const express  = require('express');
 const axios = require('axios')
+const cors = require('cors');
 const app = express();
 const port = 3000;
+
+
+app.use(cors({
+  origin: 'https://dolar-hoy-jet.vercel.app'
+}));
 
 app.get('/api/tasas', async (req, res) => {
   try {
